@@ -183,119 +183,183 @@
   <div class="top-right-logo"><img src="favicon-32x32.png" alt="logo"></div>
 
   <!-- header -->
-  <header class="header">
+  <header class="header" role="banner">
     <a class="brand" href="https://mycathost.cz">Mycat<span>Host</span></a>
   </header>
 
-  <!-- navigation – OPRAVENO! přidán Unturned -->
-  <div class="nav">
-    <a href="https://luky1212.github.io/MycatHost.cz-Basic/" class="basic"><span>Minecraft</span></a>
-    <a href="https://luky1212.github.io/MycatHost.cz-Beefy/" class="beefy"><span>3D Tisk</span></a>
-    <a href="https://luky1212.github.io/MycatHost.cz-AboutUs/" class="about"><span>About Us</span></a>
-    <a href="https://luky1212.github.io/MycatHost.cz-DalsiSluzby/" class="dalsi"><span>Další Služby</span></a>
-  </div>
+  <!-- navigation -->
+  <nav class="nav" role="navigation" aria-label="Hlavní navigace">
+    <a href="https://luky1212.github.io/MycatHost.cz-Basic/">Minecraft</a>
+    <a href="https://luky1212.github.io/MycatHost.cz-Beefy/">3D Tisk</a>
+    <a href="https://luky1212.github.io/MycatHost.cz-AboutUs/">O nás</a>
+    <a href="https://luky1212.github.io/MycatHost.cz-DalsiSluzby/">Další služby</a>
+  </nav>
 
   <!-- hero -->
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Úvod">
       <div class="hero-text">
         <h1>Oprava počítačů a notebooků — rychle, spolehlivě, férově</h1>
-        <p>Diagnostika zdarma, výměna dílů, čištění, reinstalace systému, záchrana dat…</p>
+        <p>Diagnostika zdarma, výměna dílů, čištění, reinstalace systému, záchrana dat. Přijímáme i urgentní opravy — máte problém s bootováním, pomalým PC nebo fyzickou závadou? Pomůžeme.</p>
       </div>
-      <div>
-        <a class="btn" href="#contact">Objednat opravu</a><br><br>
-        <a class="btn secondary" href="#pricing">Zobrazit ceník</a>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Objednat opravu</a>
+        <div style="height:12px"></div>
+        <a class="btn secondary" href="#pricing" aria-label="Ceník">Zobrazit ceník</a>
       </div>
     </section>
 
-    <!-- služby -->
-    <section class="services">
-      <div class="card"><h3>Diagnostika</h3><p>Kontrola HW a SW. Zdarma při opravě.</p></div>
-      <div class="card"><h3>Výměna dílů</h3><p>SSD/HDD, RAM, displeje, chlazení…</p></div>
-      <div class="card"><h3>Čištění</h3><p>Vyčištění chlazení + pasta.</p></div>
-      <div class="card"><h3>Záchrana dat</h3><p>Migrace, obnova, kopie.</p></div>
+    <!-- services -->
+    <section class="services" aria-label="Služby">
+      <div class="card">
+        <h3>Diagnostika</h3>
+        <p>Komplexní kontrola HW a SW, zjištění příčiny závady. Diagnostika při přijetí — ZDARMA (u následné opravy).</p>
+      </div>
+
+      <div class="card">
+        <h3>Výměna dílů</h3>
+        <p>Výměna SSD/HDD, RAM, napájecího zdroje, chlazení, obrazovky u notebooků a ostatních dílů. Používáme kvalitní náhradní díly nebo vaše vlastní.</p>
+      </div>
+
+      <div class="card">
+        <h3>Čištění a údržba</h3>
+        <p>Vyčištění chlazení, výměna pasty, optimalizace systému pro nižší teploty a tichý chod.</p>
+      </div>
+
+      <div class="card">
+        <h3>Záchrana dat</h3>
+        <p>Obnova dat z poškozených disků, náhradní kopie, migrace na SSD.</p>
+      </div>
     </section>
 
     <!-- pricing -->
-    <section id="pricing" class="pricing">
-      <h2 style="text-align:center;color:#00bfff;">Ceník (orientačně)</h2>
-      <div class="price-grid">
-        <div class="price"><h4>Diagnostika</h4><div class="cost">ZDARMA</div></div>
-        <div class="price"><h4>Reinstalace OS</h4><div class="cost">300–600 Kč</div></div>
-        <div class="price"><h4>Výměna SSD/HDD</h4><div class="cost">od 399 Kč</div></div>
-        <div class="price"><h4>Čištění + pasta</h4><div class="cost">399–699 Kč</div></div>
+    <section id="pricing" class="pricing" aria-label="Ceník">
+      <div style="text-align:center; margin-bottom:12px;">
+        <h2 style="color:#00bfff; margin:0 0 6px;">Ceník (orientačně)</h2>
+        <p style="color:#ccc; margin:0;">Přesná cena po diagnostice — uvádíme běžné ceny pro orientaci.</p>
+      </div>
+
+      <div class="price-grid" role="list">
+        <div class="price" role="listitem">
+          <h4>Diagnostika</h4>
+          <div class="cost">ZDARMA (při opravě)</div>
+          <ul>
+            <li>Kontrola HW/SW</li>
+            <li>Odhad ceny opravy</li>
+          </ul>
+        </div>
+
+        <div class="price" role="listitem">
+          <h4>Reinstalace OS</h4>
+          <div class="cost">300–600 Kč</div>
+          <ul>
+            <li>Instalace Windows/Linux, ovladače</li>
+            <li>Záloha dat na vyžádání</li>
+          </ul>
+        </div>
+
+        <div class="price" role="listitem">
+          <h4>Výměna SSD / HDD</h4>
+          <div class="cost">od 399 Kč + cena disku</div>
+          <ul>
+            <li>Klonování, migrace dat</li>
+            <li>Instalace a test</li>
+          </ul>
+        </div>
+
+        <div class="price" role="listitem">
+          <h4>Čištění + pasta</h4>
+          <div class="cost">399–699 Kč</div>
+          <ul>
+            <li>Vyčištění chlazení, výměna tepl. pasty</li>
+            <li>Zlepšení provozních teplot</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- kontakt -->
-    <section id="contact" class="contact">
-      <form onsubmit="return false;">
-        <h3 style="color:#00bfff;">Objednávka</h3>
+    <!-- contact -->
+    <section id="contact" class="contact" aria-label="Kontakt">
+      <form onsubmit="return false;" aria-label="Formulář pro objednávku">
+        <h3 style="color:#00bfff; margin-top:0;">Objednávka / Dotaz</h3>
+        <label for="name">Jméno</label>
+        <input id="name" type="text" placeholder="Vaše jméno" required>
 
-        <label>Jméno</label>
-        <input id="name" type="text" required>
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="email@domena.cz" required>
 
-        <label>E-mail</label>
-        <input id="email" type="email" required>
+        <label for="phone">Telefon (volitelně)</label>
+        <input id="phone" type="text" placeholder="+420 123 456 789">
 
-        <label>Telefon</label>
-        <input id="phone" type="text">
-
-        <label>Služba</label>
+        <label for="service">Služba</label>
         <select id="service">
           <option>Diagnostika</option>
           <option>Reinstalace OS</option>
           <option>Výměna SSD/HDD</option>
-          <option>Čištění</option>
+          <option>Čištění a údržba</option>
           <option>Záchrana dat</option>
         </select>
 
-        <label>Popis</label>
-        <textarea id="message"></textarea>
+        <label for="message">Popis závady / poznámka</label>
+        <textarea id="message" placeholder="Popište problém nebo požadavek"></textarea>
 
-        <button class="send-btn" onclick="sendMail()">Odeslat</button>
+        <div style="margin-top:10px;">
+          <button class="send-btn" onclick="sendMail()">Odeslat objednávku</button>
+        </div>
+        <p style="color:#bbb; font-size:13px; margin-top:10px;">Pokud tlačítko nefunguje, napište na <b>klarzygame@gmail.com</b></p>
       </form>
 
-      <div class="info">
-        <h3 style="color:#00bfff;">Kontakt</h3>
-        <p>📍 Velim U koupaliště 232</p>
-        <p>📞 +420 703 350 652</p>
-        <p>✉️ klarzygame@gmail.com</p>
+      <div class="info" aria-hidden="false">
+        <h3 style="color:#00bfff; margin-top:0;">Kontakt</h3>
+        <p>📍 Adresa: Velim U koupaliště 232</p>
+        <p>📞 Telefon: +420 703 350 652</p>
+        <p>✉️ E-mail: klarzygame@gmail.com</p>
+        <p style="margin-top:8px; color:#ccc;">Otevřeno: Po–Pá 9:00–18:00</p>
+        <div style="margin-top:12px;">
+          <a class="btn" href="tel:+420703350652">Zavolat</a>
+        </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq">
-      <h2 style="text-align:center;color:#00bfff;">Časté dotazy</h2>
-      <p style="max-width:900px;margin:auto;color:#ddd;">
-        <b>Jak dlouho trvá oprava?</b><br>1–3 dny dle dílů.<br><br>
-        <b>Musím si objednat termín?</b><br>Není nutné, ale doporučujeme.<br><br>
-        <b>Záchrana dat?</b><br>Pracujeme na tom.
-      </p>
+    <section class="faq" aria-label="Časté dotazy">
+      <h2 style="color:#00bfff; text-align:center;">Časté dotazy</h2>
+      <div style="max-width:900px; margin:12px auto; color:#ddd;">
+        <h3>Jak dlouho trvá oprava?</h3>
+        <p>Základní diagnostika do 24 hodin, běžné opravy většinou 1–3 pracovní dny (záleží na dostupnosti dílu).</p>
+
+        <h3>Musím si objednat termín?</h3>
+        <p>Není nutné, ale doporučujeme zavolat nebo napsat. U urgentních oprav se snažíme vyhovět.</p>
+
+        <h3>Zachraňujete data z rozbitých disků?</h3>
+        <p>Ne, ale sanžíme se tuto možnost mít co nejdříve.</p>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- footer -->
+  <footer class="footer" role="contentinfo">
     © 2025 MycatHost.cz — Oprava počítačů & Notebooků
   </footer>
 
   <script>
     function sendMail(){
-      const name = encodeURIComponent(document.getElementById('name').value);
-      const email = encodeURIComponent(document.getElementById('email').value);
-      const phone = encodeURIComponent(document.getElementById('phone').value);
-      const service = encodeURIComponent(document.getElementById('service').value);
-      const message = encodeURIComponent(document.getElementById('message').value);
-
-      if(!email){ alert("Vyplň e-mail"); return; }
-
-      window.location.href =
-        `mailto:opravna@mycathost.cz?subject=Objednávka – ${service}&body=` +
-        `Jméno: ${name}%0A` +
-        `E-mail: ${email}%0A` +
-        `Telefon: ${phone}%0A` +
-        `Služba: ${service}%0A%0A` +
-        `Zpráva:%0A${message}`;
+      const name = encodeURIComponent(document.getElementById('name').value || 'bez jména');
+      const email = encodeURIComponent(document.getElementById('email').value || '');
+      const phone = encodeURIComponent(document.getElementById('phone').value || '');
+      const service = encodeURIComponent(document.getElementById('service').value || '');
+      const message = encodeURIComponent(document.getElementById('message').value || '');
+      if(!email){ alert('Vyplňte prosím e-mail.'); return; }
+      const subject = encodeURIComponent('Objednávka opravy – ' + service);
+      const body = encodeURIComponent(
+        'Jméno: ' + decodeURIComponent(name) + '\n' +
+        'E-mail: ' + decodeURIComponent(email) + '\n' +
+        'Telefon: ' + decodeURIComponent(phone) + '\n' +
+        'Služba: ' + decodeURIComponent(service) + '\n\n' +
+        'Popis: ' + decodeURIComponent(message)
+      );
+      // Odeslání přes mailto
+      window.location.href = `mailto:opravna@mycathost.cz?subject=${subject}&body=${body}`;
     }
   </script>
 </body>
