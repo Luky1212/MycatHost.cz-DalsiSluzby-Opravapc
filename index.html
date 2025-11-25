@@ -6,129 +6,138 @@
   <title>MycatHost • Oprava počítačů</title>
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <meta name="description" content="Rychlá a spolehlivá oprava počítačů a notebooků. Diagnostika, výměna dílů, čištění, reinstalace systému.">
-      <style>
-        .top-right-logo {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-        }
-        .top-right-logo img {
-            width: 32px;
-            height: 32px;
-        }
+  <style>
+    /* Reset & základ */
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111214;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .header {
-            background-color: #007BFF;
-            padding: 20px;
-            text-align: left;
-        }
-        .header h1 {
-            color: white;
-            display: inline;
-            font-size: 28px;
-        }
-        .header h1 span {
-            color: red;
-        }
+    /* HLAVIČKA */
+    .top-right-logo {
+      position: fixed; top: 10px; right: 10px; z-index: 1000;
+    }
+    .top-right-logo img { width: 32px; height: 32px; display:block; }
 
-        /* NAV: zvětšené karty s obrázky místo barev */
-        .nav {
-            background-color: #333;
-            padding: 14px;
-            text-align: center;
-            margin-top: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-        }
-        .nav a {
-            position: relative;
-            text-decoration: none;
-            color: white;
-            display: inline-flex;
-            align-items: flex-end;
-            justify-content: center;
-            width: 220px;      /* šířka karty */
-            height: 130px;     /* výška karty */
-            border-radius: 10px;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            font-size: 20px;
-        }
-        /* polo-transparentní pás pro lepší čitelnost textu */
-        .nav a span {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            background: rgba(0,0,0,0.45);
-            padding: 8px 6px;
-            box-sizing: border-box;
-        }
+    .header {
+      background: linear-gradient(135deg,#007BFF,#003a99);
+      padding: 22px 20px;
+      border-bottom: 3px solid #ff3333;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .brand {
+      font-size: 28px; color: #fff; text-decoration: none;
+      display:flex; align-items:baseline; gap:8px;
+    }
+    .brand span { color:#ff3333; font-weight:700; margin-left:4px; }
 
-        /* obrázky (nahraďte soubory svými cestami) */
-        .nav a.basic { background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstore-images.s-microsoft.com%2Fimage%2Fapps.60323.14294656681058683.4d17bdd8-7026-429a-846f-cf7836bc9e56.a69e6905-8926-4a48-b243-14a039b97aae%3Fmode%3Dscale%26q%3D90%26h%3D1080%26w%3D1920%26format%3Djpg&f=1&nofb=1&ipt=35bad4cdba6348e2db85f339229c3cdf3cc17272f7b5658865b028c32e0cccc0'); }
-        .nav a.beefy { background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs1.raise3d.com%2F2024%2F11%2F7-min.jpg&f=1&nofb=1&ipt=2b99ee76aa68aefc2cf531d846d3561bd326fe49f89c3bf9e14efc09797e5db4'); }
-        .nav a.ultimate { background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsteamcdn-a.akamaihd.net%2Fsteamcommunity%2Fpublic%2Fimages%2Fitems%2F304930%2Fc5bc3d72f1f11f4644856d04cc038ee93dfa070d.jpg&f=1&nofb=1&ipt=7e64988cdc8adc758dda9192c5f50fe803427af4c2c24bb893ab3dff949f26d3'); }
-        .nav a.about { background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Firegister.al%2Fwp-content%2Fuploads%2F2019%2F04%2Fserver-hosting.jpeg&f=1&nofb=1&ipt=1f27c4adb78638a8e9f8c17feeec89106489f91db57c147766480a26a051e4ee'); }
-        .nav a.dalsi { background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fman-fix-server-network-data-center-room-67131350.jpg&f=1&nofb=1&ipt=d2623d46b4e886c4ed0afa171f4b77a82b29dff44e714d226f2a69ccdf217fe7'); }
+    /* NAV */
+    .nav {
+      background:#2b2b2b;
+      display:flex;
+      gap:12px;
+      padding:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .nav a {
+      color:#fff; text-decoration:none; padding:12px 18px; border-radius:8px;
+      display:inline-block; font-weight:600;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .nav a:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(0,0,0,0.5); }
 
-        /* Zvýraznění při najetí */
-        .nav a:hover {
-            transform: translateY(-4px);
-            transition: transform 0.15s ease;
-        }
+    /* HERO / Úvod */
+    .hero {
+      max-width:1100px;
+      margin:28px auto 16px;
+      padding:28px;
+      background:#161617;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .hero-text { flex:1 1 420px; }
+    .hero h1 { margin:0; font-size:28px; color:#00bfff; }
+    .hero p { margin:10px 0 0; color:#ddd; font-size:16px; line-height:1.5; }
+    .hero-cta { min-width:220px; text-align:center; }
+    .btn {
+      display:inline-block; background:#ff3333; color:white; padding:12px 18px; border-radius:8px;
+      text-decoration:none; font-weight:700; box-shadow:0 8px 18px rgba(255,51,51,0.12);
+    }
+    .btn.secondary { background:#007BFF; }
 
-        .block {
-            width: 90%;
-            margin: 15px auto;
-            padding: 20px;
-            font-size: 18px;
-            color: white;
-            border-radius: 5px;
-        }
-        .block:nth-child(odd) { background-color: #333; }
-        .block:nth-child(even) { background-color: #007BFF; }
+    /* Služby */
+    .services {
+      max-width:1100px; margin: 22px auto; display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; padding: 0 16px;
+    }
+    .card {
+      background:#191a1b; padding:18px; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    }
+    .card h3 { margin:0 0 8px; color:#00bfff; }
+    .card p { margin:0; color:#ccc; line-height:1.5; }
 
-        .footer {
-            text-align: center;
-            padding: 10px;
-            color: white;
-            margin-top: auto;
-            font-size: 14px;
-        }
+    /* Ceník */
+    .pricing {
+      max-width:1100px; margin:20px auto; padding:0 16px;
+    }
+    .price-grid { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+    .price {
+      background:linear-gradient(180deg,#0f1112,#161719);
+      border:1px solid rgba(255,255,255,0.03);
+      padding:18px; border-radius:12px; width:260px; text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    }
+    .price h4 { color:#00bfff; margin:0 0 8px; }
+    .price .cost { font-size:22px; font-weight:700; margin:8px 0; color:#fff; }
+    .price ul { list-style:none; padding:0; margin:8px 0; color:#bbb; text-align:left; }
 
-        /* RESPONSIVNÍ úpravy pro mobily */
-        @media (max-width: 600px) {
-            .header h1 { font-size: 22px; }
-            .nav {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px;
-            }
-            .nav a {
-                width: 90%;
-                height: 100px;
-                font-size: 18px;
-            }
-            .block {
-                font-size: 16px;
-                padding: 15px;
-            }
-        }
-    </style>
+    /* Kontakt */
+    .contact {
+      max-width:1100px; margin:28px auto; padding:22px; background:#151617; border-radius:12px;
+      display:flex; gap:20px; flex-wrap:wrap;
+    }
+    .contact form { flex:1 1 360px; }
+    .contact .info { flex:1 1 260px; color:#ccc; }
+    input[type=text], input[type=email], textarea, select {
+      width:100%; padding:10px 12px; margin:8px 0; border-radius:8px; border:1px solid #2b2b2b;
+      background:#0f1011; color:#eee;
+    }
+    textarea { min-height:120px; resize:vertical; }
+    .send-btn { background:#00bfff; color:#051021; padding:12px 16px; font-weight:700; border-radius:8px; border:none; cursor:pointer; }
+
+    /* FAQ */
+    .faq { max-width:1100px; margin:20px auto; padding:0 16px 40px; }
+    .faq h3 { color:#00bfff; }
+    .faq p { color:#ddd; }
+
+    /* Footer */
+    .footer {
+      margin-top:auto; background:#0f0f10; padding:14px; text-align:center; color:#bfbfbf; border-top:1px solid #222;
+    }
+
+    /* Responsivní */
+    @media (max-width:760px){
+      .hero { padding:18px; }
+      .hero h1 { font-size:22px; }
+      .nav a { padding:10px 12px; font-size:15px; }
+    }
+  </style>
 </head>
 <body>
 
